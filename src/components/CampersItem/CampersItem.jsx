@@ -1,4 +1,15 @@
-import { Item, Image, Description, Button } from "./CampersItem.styled";
+import {
+  Item,
+  Image,
+  Description,
+  Button,
+  Title,
+  Price,
+  Reviews,
+  Location,
+  TitleWrapper,
+  ReviewsWrapper,
+} from "./CampersItem.styled";
 
 export const CampersItem = ({ value }) => {
   const {
@@ -25,16 +36,18 @@ export const CampersItem = ({ value }) => {
   return (
     <>
       <Item>
+        <Image src={gallery[0]} alt={name} />
         <div>
-          <img src="" alt="" />
-        </div>
-        <div>
-          <h2>{name}</h2>
-          <p>{price}.00</p>
-          <p>
-            {rating}
-            <span>({reviews.length} Rewiews)</span> <span>{location}</span>
-          </p>
+          <TitleWrapper>
+            <Title>{name}</Title>
+            <Price>€{price}.00</Price>
+          </TitleWrapper>
+          <ReviewsWrapper>
+            <Reviews>
+              {rating} ({reviews.length} Rewiews)
+            </Reviews>
+            <Location>{location}</Location>
+          </ReviewsWrapper>
           <Description>{description}</Description>
           <ul>
             <li>{adults}&nbsp;adults</li>

@@ -7,5 +7,5 @@ export const theme = {
     blockFeatures: "#F2F4F7",
     inputs: "#F7F7F7",
   },
-  trancition: "200ms cubic-bezier(0.4,0,0.2,1)",
+  transition: "200ms cubic-bezier(0.4,0,0.2,1)",
 };
