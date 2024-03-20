@@ -6,11 +6,11 @@ import WelcomePage from "./pages/WelcomePage";
 function App() {
   return (
     <>
-      <Routes>
-        <Route path="/campers" element={<WelcomePage />} />
-        <Route path="/catalog" element={<CatalogPage />} />
-        <Route path="/favorite" element={<FavoritesPage />} />
-      </Routes>
+        <Routes>
+          <Route path="/" element={<WelcomePage />} />
+          <Route path="/catalog" element={<CatalogPage />} />
+          <Route path="/favorite" element={<FavoritesPage />} />
+        </Routes>
     </>
   );
 }
