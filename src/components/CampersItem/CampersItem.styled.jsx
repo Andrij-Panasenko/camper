@@ -15,3 +15,8 @@ width: 525px;
   overflow: hidden;
   text-overflow: ellipsis;
 `;
+
+export const Button = styled.button`
+display: block;
+padding: 16px 40px;
+`;

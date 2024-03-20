@@ -6,6 +6,8 @@ import { BrowserRouter } from "react-router-dom";
 import App from "./App";
 import { store } from "./redux/store";
 import { GlobalStyles } from "./styles/GlobalStyles";
+import { ThemeProvider } from "styled-components";
+import { theme } from "./styles/theme";
 
 
 
@@ -14,9 +16,11 @@ root.render(
   <>
     <React.StrictMode>
       <BrowserRouter basename="/camper">
-        <Provider store={store}>
-          <App />
-        </Provider>
+        <ThemeProvider theme={theme}>
+          <Provider store={store}>
+            <App />
+          </Provider>
+        </ThemeProvider>
       </BrowserRouter>
     </React.StrictMode>
 

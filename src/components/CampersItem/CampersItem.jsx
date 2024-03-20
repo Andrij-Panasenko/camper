@@ -1,4 +1,4 @@
-import { Item, Image, Description } from "./CampersItem.styled";
+import { Item, Image, Description, Button } from "./CampersItem.styled";
 
 export const CampersItem = ({ value }) => {
   const {
@@ -44,7 +44,7 @@ export const CampersItem = ({ value }) => {
             <li>{details.beds}&nbsp;beds</li>
             <li>AC</li>
           </ul>
-          <button type="button">Show more</button>
+          <Button type="button">Show more</Button>
         </div>
       </Item>
     </>
