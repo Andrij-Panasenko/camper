@@ -1,14 +1,14 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { catalogReducer } from "./catalogSlice";
 import {
-  persistStore,
+  // persistStore,
   FLUSH,
   REHYDRATE,
   PAUSE,
   PERSIST,
   PURGE,
   REGISTER,
-  persistReducer,
+  // persistReducer,
 } from "redux-persist";
 
 export const store = configureStore({
