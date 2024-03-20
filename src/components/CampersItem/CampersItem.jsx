@@ -1,26 +1,52 @@
-export const CampersItem = () => {
+import { Item, Image, Description } from "./CampersItem.styled";
+
+export const CampersItem = ({ value }) => {
+  const {
+    adults,
+    children,
+    consumption,
+    description,
+    engine,
+    form,
+    height,
+    length,
+    location,
+    name,
+    price,
+    rating,
+    tank,
+    transmission,
+    width,
+    details,
+    gallery,
+    reviews,
+  } = value;
+  console.log(value);
   return (
     <>
-      <li>
+      <Item>
         <div>
           <img src="" alt="" />
         </div>
         <div>
-          <h2>Title</h2>
-          <p>price</p>
-          <p></p>
-          <p></p>
+          <h2>{name}</h2>
+          <p>{price}.00</p>
+          <p>
+            {rating}
+            <span>({reviews.length} Rewiews)</span> <span>{location}</span>
+          </p>
+          <Description>{description}</Description>
           <ul>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
+            <li>{adults}&nbsp;adults</li>
+            <li>{transmission}</li>
+            <li>{engine}</li>
+            <li>Kitchen</li>
+            <li>{details.beds}&nbsp;beds</li>
+            <li>AC</li>
           </ul>
-          <button type="button"></button>
+          <button type="button">Show more</button>
         </div>
-      </li>
+      </Item>
     </>
   );
 };
