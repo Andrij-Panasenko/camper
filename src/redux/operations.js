@@ -7,8 +7,8 @@ export const getAllCampers = createAsyncThunk(
   "get/campers",
   async (_, thunkAPI) => {
     try {
-      const data = await axios.get("/adverts");
-      return data;
+      const response = await axios.get("/adverts");
+      return response.data;
     } catch (error) {
       console.log(error.message);
       return thunkAPI.rejectWithValue(error.message);
