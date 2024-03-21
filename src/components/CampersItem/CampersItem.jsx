@@ -9,7 +9,11 @@ import {
   Location,
   TitleWrapper,
   ReviewsWrapper,
+  InfoList,
+  InfoListItem,
+  Svg,
 } from "./CampersItem.styled";
+import sprite from "../../assets/sprite.svg";
 
 export const CampersItem = ({ value }) => {
   const {
@@ -33,6 +37,42 @@ export const CampersItem = ({ value }) => {
     reviews,
   } = value;
   console.log(value);
+
+  const adultsSVG = (
+    <Svg>
+      <use xlinkHref={sprite + "#icon-adults"}></use>
+    </Svg>
+  );
+
+  const transmissionSVG = (
+    <Svg>
+      <use xlinkHref={sprite + "#icon-trans"}></use>
+    </Svg>
+  );
+
+  const petrolSVG = (
+    <Svg>
+      <use xlinkHref={sprite + "#icon-petrol"}></use>
+    </Svg>
+  );
+
+  const kitchenSVG = (
+    <Svg>
+      <use xlinkHref={sprite + "#icon-kitchen"}></use>
+    </Svg>
+  );
+
+  const bedsSVG = (
+    <Svg>
+      <use xlinkHref={sprite + "#icon-bed"}></use>
+    </Svg>
+  );
+
+  const acSVG = (
+    <Svg>
+      <use xlinkHref={sprite + "#icon-AC"}></use>
+    </Svg>
+  );
   return (
     <>
       <Item>
@@ -49,14 +89,20 @@ export const CampersItem = ({ value }) => {
             <Location>{location}</Location>
           </ReviewsWrapper>
           <Description>{description}</Description>
-          <ul>
-            <li>{adults}&nbsp;adults</li>
-            <li>{transmission}</li>
-            <li>{engine}</li>
-            <li>Kitchen</li>
-            <li>{details.beds}&nbsp;beds</li>
-            <li>AC</li>
-          </ul>
+          <InfoList>
+            <InfoListItem>
+              {adultsSVG}
+              {adults}&nbsp;adults
+            </InfoListItem>
+            <InfoListItem>
+              {transmissionSVG}
+              {transmission}
+            </InfoListItem>
+            <InfoListItem>{petrolSVG}{engine}</InfoListItem>
+            <InfoListItem>{ kitchenSVG}Kitchen</InfoListItem>
+            <InfoListItem>{ bedsSVG}{details.beds}&nbsp;beds</InfoListItem>
+            <InfoListItem>{acSVG}AC</InfoListItem>
+          </InfoList>
           <Button type="button">Show more</Button>
         </div>
       </Item>

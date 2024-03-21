@@ -1,5 +1,12 @@
 import styled from "styled-components";
 
+export const Svg = styled.svg`
+  width: 20px;
+  height: 20px;
+  stroke: ${(p) => p.theme.colors.black};
+  fill: ${(p) => p.theme.colors.black};
+`;
+
 export const Item = styled.li`
   display: flex;
   gap: 24px;
@@ -7,7 +14,9 @@ export const Item = styled.li`
   width: 840px;
   height: 310px;
 
-  outline: 1px solid red;
+  /* outline: 1px solid red; */
+  border: 1px solid rgba(16, 24, 40, 0.2);
+  border-radius: 20px;
 
   box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
     0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
@@ -67,6 +76,30 @@ export const Description = styled.p`
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+`;
+
+export const InfoList = styled.ul`
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 8px;
+  column-gap: 8px;
+  margin-bottom: 24px;
+`;
+
+export const InfoListItem = styled.li`
+  padding: 12px 18px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.25;
+  border-radius: 100px;
+  /* text-align: center; */
+  display: flex;
+  /* align-items: center; */
+  justify-content: center;
+  gap: 8px;
+
+  color: ${(p) => p.theme.colors.black};
+  background-color: ${(p) => p.theme.colors.blockFeatures};
 `;
 
 export const Button = styled.button`
