@@ -18,6 +18,7 @@ import {
   MapPinSVG,
 } from "./CampersItem.styled";
 import sprite from "../../assets/sprite.svg";
+import { useSvgIcons } from "../../hooks/useSvgIcons";
 
 export const CampersItem = ({ value }) => {
   const {
@@ -54,41 +55,9 @@ export const CampersItem = ({ value }) => {
     </MapPinSVG>
   );
 
-  const adultsSVG = (
-    <Svg>
-      <use xlinkHref={sprite + "#icon-adults"}></use>
-    </Svg>
-  );
+  const { adultsSVG, transmissionSVG, petrolSVG, kitchenSVG, bedsSVG, acSVG } =
+    useSvgIcons();
 
-  const transmissionSVG = (
-    <Svg>
-      <use xlinkHref={sprite + "#icon-trans"}></use>
-    </Svg>
-  );
-
-  const petrolSVG = (
-    <Svg>
-      <use xlinkHref={sprite + "#icon-petrol"}></use>
-    </Svg>
-  );
-
-  const kitchenSVG = (
-    <Svg>
-      <use xlinkHref={sprite + "#icon-kitchen"}></use>
-    </Svg>
-  );
-
-  const bedsSVG = (
-    <Svg>
-      <use xlinkHref={sprite + "#icon-bed"}></use>
-    </Svg>
-  );
-
-  const acSVG = (
-    <Svg>
-      <use xlinkHref={sprite + "#icon-AC"}></use>
-    </Svg>
-  );
   return (
     <>
       <Item>
