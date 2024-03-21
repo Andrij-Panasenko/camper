@@ -8,10 +8,13 @@ import {
   Reviews,
   Location,
   TitleWrapper,
-  ReviewsWrapper,
   InfoList,
   InfoListItem,
   Svg,
+  RateSvg,
+  CardInfo,
+  RatingWrapper,
+  LocationWrapper,
 } from "./CampersItem.styled";
 import sprite from "../../assets/sprite.svg";
 
@@ -37,6 +40,18 @@ export const CampersItem = ({ value }) => {
     reviews,
   } = value;
   console.log(value);
+
+  const ratingSVG = (
+    <RateSvg>
+      <use xlinkHref={sprite + "#icon-Rating"}></use>
+    </RateSvg>
+  );
+
+  const mapPinSVG = (
+    <RateSvg>
+      <use xlinkHref={sprite + "#icon-map-pin"}></use>
+    </RateSvg>
+  );
 
   const adultsSVG = (
     <Svg>
@@ -82,12 +97,19 @@ export const CampersItem = ({ value }) => {
             <Title>{name}</Title>
             <Price>€{price}.00</Price>
           </TitleWrapper>
-          <ReviewsWrapper>
-            <Reviews>
-              {rating} ({reviews.length} Rewiews)
-            </Reviews>
-            <Location>{location}</Location>
-          </ReviewsWrapper>
+          <CardInfo>
+            <RatingWrapper>
+              {ratingSVG}
+              <Reviews>
+                {rating} ({reviews.length} Rewiews)
+              </Reviews>
+            </RatingWrapper>
+            <LocationWrapper>
+              {mapPinSVG}
+              <Location>{location}</Location>
+            </LocationWrapper>
+          </CardInfo>
+
           <Description>{description}</Description>
           <InfoList>
             <InfoListItem>
@@ -98,9 +120,15 @@ export const CampersItem = ({ value }) => {
               {transmissionSVG}
               {transmission}
             </InfoListItem>
-            <InfoListItem>{petrolSVG}{engine}</InfoListItem>
-            <InfoListItem>{ kitchenSVG}Kitchen</InfoListItem>
-            <InfoListItem>{ bedsSVG}{details.beds}&nbsp;beds</InfoListItem>
+            <InfoListItem>
+              {petrolSVG}
+              {engine}
+            </InfoListItem>
+            <InfoListItem>{kitchenSVG}Kitchen</InfoListItem>
+            <InfoListItem>
+              {bedsSVG}
+              {details.beds}&nbsp;beds
+            </InfoListItem>
             <InfoListItem>{acSVG}AC</InfoListItem>
           </InfoList>
           <Button type="button">Show more</Button>

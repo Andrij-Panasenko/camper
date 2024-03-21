@@ -7,6 +7,12 @@ export const Svg = styled.svg`
   fill: ${(p) => p.theme.colors.black};
 `;
 
+export const RateSvg = styled.svg`
+  fill: ${(p) => p.theme.colors.yellow};
+  width: 20px;
+  height: 20px;
+`;
+
 export const Item = styled.li`
   display: flex;
   gap: 24px;
@@ -55,16 +61,27 @@ export const Reviews = styled.p`
   color: ${(p) => p.theme.colors.black};
 `;
 
-export const ReviewsWrapper = styled.div`
+export const CardInfo = styled.div`
   display: flex;
   gap: 16px;
   margin-bottom: 24px;
+`;
+export const RatingWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 4px;
 `;
 
 export const Location = styled.p`
   font-size: 16px;
   line-height: 1.5;
   color: ${(p) => p.theme.colors.black};
+`;
+
+export const LocationWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 4px;
 `;
 
 export const Description = styled.p`
