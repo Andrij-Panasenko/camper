@@ -15,6 +15,7 @@ import {
   CardInfo,
   RatingWrapper,
   LocationWrapper,
+  MapPinSVG,
 } from "./CampersItem.styled";
 import sprite from "../../assets/sprite.svg";
 
@@ -48,9 +49,9 @@ export const CampersItem = ({ value }) => {
   );
 
   const mapPinSVG = (
-    <RateSvg>
+    <MapPinSVG>
       <use xlinkHref={sprite + "#icon-map-pin"}></use>
-    </RateSvg>
+    </MapPinSVG>
   );
 
   const adultsSVG = (
