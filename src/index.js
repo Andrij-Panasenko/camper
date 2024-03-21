@@ -5,7 +5,6 @@ import { BrowserRouter } from "react-router-dom";
 
 import App from "./App";
 import { store } from "./redux/store";
-import { GlobalStyles } from "./styles/GlobalStyles";
 import { ThemeProvider } from "styled-components";
 import { theme } from "./styles/theme";
 
@@ -24,6 +23,6 @@ root.render(
       </BrowserRouter>
     </React.StrictMode>
 
-    <GlobalStyles />
+    
   </>
 );
