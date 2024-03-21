@@ -17,8 +17,9 @@ import {
   LocationWrapper,
   MapPinSVG,
 } from "./CampersItem.styled";
-import sprite from "../../assets/sprite.svg";
-import { useSvgIcons } from "../../hooks/useSvgIcons";
+import sprite from "../../../assets/sprite.svg";
+
+import { useSvgIcons } from "../../../hooks/useSvgIcons";
 
 export const CampersItem = ({ value }) => {
   const {

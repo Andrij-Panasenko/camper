@@ -1,5 +1,5 @@
 import sprite from '../assets/sprite.svg'
-import { Svg } from '../components/CampersItem/CampersItem.styled';
+import { Svg } from '../components/Catalog/CampersItem/CampersItem.styled';
 
 export const useSvgIcons = () => {
   const adultsSVG = (
