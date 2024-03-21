@@ -20,6 +20,8 @@ import {
 import sprite from "../../../assets/sprite.svg";
 
 import { useSvgIcons } from "../../../hooks/useSvgIcons";
+import { useState } from "react";
+import { ModalShowMore } from "../../ModalShowMore.jsx/ModalShowMore";
 
 export const CampersItem = ({ value }) => {
   const {
@@ -42,6 +44,8 @@ export const CampersItem = ({ value }) => {
     gallery,
     reviews,
   } = value;
+
+  const [isOpenModal, setIsOpenModal] = useState(false);
   console.log(value);
 
   const ratingSVG = (
@@ -102,9 +106,17 @@ export const CampersItem = ({ value }) => {
             </InfoListItem>
             <InfoListItem>{acSVG}AC</InfoListItem>
           </InfoList>
-          <Button type="button">Show more</Button>
+          <Button
+            type="button"
+            onClick={() => {
+              setIsOpenModal(true);
+            }}>
+            Show more
+          </Button>
         </div>
       </Item>
+
+      <ModalShowMore isModalOpen={isOpenModal} setIsOpen={setIsOpenModal} data={value} />
     </>
   );
 };

@@ -75,6 +75,7 @@ export const CardInfo = styled.div`
   gap: 16px;
   margin-bottom: 24px;
 `;
+
 export const RatingWrapper = styled.div`
   display: flex;
   align-items: center;
