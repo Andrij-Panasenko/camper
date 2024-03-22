@@ -114,7 +114,7 @@ export const Radio = styled.input`
       width: 85px;
       height: 5px;
       position: absolute;
-      bottom: -24px;
+      bottom: -28px;
     }
   }
 
@@ -126,16 +126,19 @@ export const Radio = styled.input`
       width: 85px;
       height: 5px;
       position: absolute;
-      bottom: -24px;
+      bottom: -28px;
     }
   }
 `;
 
-export const IconLine = styled.svg`
-  width: 902px;
+export const IconLine = styled.span`
+  display: block;
+  width: 100%;
   height: 2px;
-  margin-top: 24px;
+  background-color: rgba(16, 24, 40, 0.2);
   margin-bottom: 44px;
+  margin-top: 24px;
+
 `;
 
 export const FeaturesWrapper = styled.div`

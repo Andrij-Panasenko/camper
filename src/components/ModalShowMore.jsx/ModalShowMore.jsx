@@ -99,7 +99,7 @@ export const ModalShowMore = ({ isModalOpen, setIsOpen, data }) => {
          </RadioWrapper>
        </BtnWrapper>
         <IconLine>
-          <use xlinkHref={sprite + "#icon-line"}></use>
+          {/* <use xlinkHref={sprite + "#icon-line"}></use> */}
         </IconLine>
         <FeaturesWrapper>
           <Features data={data} />
