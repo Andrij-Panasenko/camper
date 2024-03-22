@@ -1,19 +1,27 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { catalogReducer } from "./catalogSlice";
 import {
-  // persistStore,
+  persistStore,
   FLUSH,
   REHYDRATE,
   PAUSE,
   PERSIST,
   PURGE,
   REGISTER,
-  // persistReducer,
+  persistReducer,
 } from "redux-persist";
+import storage from "redux-persist/lib/storage";
+
+
+const persistConfig = {
+  key: "catalog",
+  storage,
+  whitelist: ["isFavorite"],
+};
 
 export const store = configureStore({
   reducer: {
-    catalog: catalogReducer,
+    catalog: persistReducer(persistConfig ,catalogReducer),
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
@@ -22,3 +30,5 @@ export const store = configureStore({
       },
     }),
 });
+
+export const persistor = persistStore(store);

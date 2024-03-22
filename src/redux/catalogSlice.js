@@ -7,6 +7,7 @@ const catalogSlice = createSlice({
     items: [],
     isLoading: false,
     error: null,
+    isFavorite: [],
   },
   extraReducers: (builder) => {
     builder
