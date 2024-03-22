@@ -10,6 +10,7 @@ export const FeaturesList = styled.ul`
 `;
 
 export const FeaturesItem = styled.li`
+  display: flex;
   border-radius: 100px;
   padding: 12px 18px;
   background-color: ${(p) => p.theme.colors.blockFeatures};

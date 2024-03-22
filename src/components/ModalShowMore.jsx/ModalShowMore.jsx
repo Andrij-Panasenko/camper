@@ -1,16 +1,21 @@
 import Modal from "react-modal";
-
+import sprite from "../../assets/sprite.svg";
 import styles from "./ModalShowMore.module.css";
 import {
   CardInfo,
   Description,
+  ExpandBtn,
+  FeaturesBtn,
   FeaturesWrapper,
   GalleryImg,
   GalleryItem,
   GalleryList,
+  IconLine,
   Location,
   Price,
+  Radio,
   Reviews,
+  ReviewsBtn,
   Title,
 } from "./ModalShowMore.styled";
 import { BookingCamperForm } from "../BookingCamperForm/BookingCamperForm";
@@ -45,7 +50,8 @@ export const ModalShowMore = ({ isModalOpen, setIsOpen, data }) => {
     <>
       <Modal
         // className={styles.modal}
-        isOpen={isModalOpen}
+        // isOpen={isModalOpen}
+        isOpen={true}
         onRequestClose={() => {
           setIsOpen(false);
         }}
@@ -75,10 +81,23 @@ export const ModalShowMore = ({ isModalOpen, setIsOpen, data }) => {
           </GalleryList>
           <Description>{description}</Description>
         </div>
+
         <div>
-          <button>Features</button>
-          <button>Reviews</button>
+          <Radio id="features" name="expand" type="radio" />
+          <label for="features">
+            <FeaturesBtn>Features</FeaturesBtn>
+          </label>
         </div>
+
+        <div>
+          <Radio id="reviews" name="expand" type="radio" />
+          <label for="reviews">
+            <ReviewsBtn>Reviews</ReviewsBtn>
+          </label>
+        </div>
+        <IconLine>
+          <use xlinkHref={sprite + "#icon-line"}></use>
+        </IconLine>
         <FeaturesWrapper>
           <Features data={data} />
           <BookingCamperForm />

@@ -97,5 +97,8 @@
 <symbol id="icon-line" viewBox="0 0 6880 32">
 <path  stroke="#101828" stroke-opacity="0.1" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" stroke-width="16" d="M0 16h6880"></path>
 </symbol>
+<symbol id="icon-Vector" viewBox="0 0 902 2">
+<path stroke="#101828" stroke-opacity="0.2" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" stroke-width="16" d="M0 16h14432"></path>
+</symbol>
 </defs>
 </svg>

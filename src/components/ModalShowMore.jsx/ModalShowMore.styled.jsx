@@ -35,10 +35,10 @@ export const Price = styled.p`
   margin-bottom: 24px;
 `;
 
-
 export const Description = styled.p`
   font-size: 16px;
   line-height: 1.5;
+  margin-bottom: 44px;
   color: ${(p) => p.theme.colors.grey};
 `;
 
@@ -61,7 +61,62 @@ export const GalleryImg = styled.img`
   height: 310px; */
 `;
 
+export const FeaturesBtn = styled.span`
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.2;
+  color: ${(p) => p.theme.colors.black};
+  outline: none;
+  border: none;
+  background-color: transparent;
+  margin-bottom: 24px;
+`;
+
+export const ReviewsBtn = styled.span`
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.2;
+  color: ${(p) => p.theme.colors.black};
+  outline: none;
+  border: none;
+  background-color: transparent;
+  margin-bottom: 24px;
+`;
+
+export const ExpandBtn = styled.button`
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.2;
+  color: ${(p) => p.theme.colors.black};
+  outline: none;
+  border: none;
+  background-color: transparent;
+  margin-bottom: 24px;
+`;
+
+/* position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  margin: -1px; */
+
+export const Radio = styled.input``;
+
+export const IconLine = styled.svg`
+width: 902px;
+height: 2px;
+margin-top: 24px;
+margin-bottom: 44px;
+`;
+
 export const FeaturesWrapper = styled.div`
-display: flex;
-justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 `;

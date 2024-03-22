@@ -33,7 +33,7 @@ export const Features = ({ data }) => {
         </FeaturesList>
         <VehicleDetailsTitle>Vehicle details</VehicleDetailsTitle>
         <SvgLine>
-          <use xlinkHref={sprite + "#icon-line"}></use>
+          <use xlinkHref={sprite + "#icon-Vector"}></use>
         </SvgLine>
         <VehicleDetailsList>
           <VehicleDetailsItem>
