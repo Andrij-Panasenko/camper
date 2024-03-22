@@ -5,10 +5,6 @@ export const BookingCamperForm = () => {
   return (
     <>
       <div>
-        <FormTitle>Book your campervan now</FormTitle>
-        <FormSubtitle>
-          Stay connected! We are always ready to help you.
-        </FormSubtitle>
         <Formik
           initialValues={{
             name: "",
@@ -18,6 +14,10 @@ export const BookingCamperForm = () => {
           }}
           onSubmit={(values) => console.log(values)}>
           <Form>
+            <FormTitle>Book your campervan now</FormTitle>
+            <FormSubtitle>
+              Stay connected! We are always ready to help you.
+            </FormSubtitle>
             <Field name="name" placeholder="Name" type="text" required />
 
             <Field name="email" placeholder="Email" type="email" required />
