@@ -3,6 +3,7 @@ export const theme = {
     black: "#101828",
     grey: "#475467",
     red: "#E44848",
+    hoverRed: "#d84343",
     yellow: "#FFC531",
     blockFeatures: "#F2F4F7",
     inputs: "#F7F7F7",

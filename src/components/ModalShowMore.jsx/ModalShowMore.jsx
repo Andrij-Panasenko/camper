@@ -12,6 +12,7 @@ import {
   Reviews,
   Title,
 } from "./ModalShowMore.styled";
+import { BookingCamperForm } from "../BookingCamperForm/BookingCamperForm";
 // import { useSvgIcons } from "../../hooks/useSvgIcons";
 Modal.setAppElement("#modal");
 
@@ -76,6 +77,7 @@ export const ModalShowMore = ({ isModalOpen, setIsOpen, data }) => {
           <button>Features</button>
           <button>Reviews</button>
         </div>
+        <BookingCamperForm/>
       </Modal>
     </>
   );

@@ -12,3 +12,21 @@
     background: #d9d9d9;
     height: 264px;
 }
+
+.modal {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50;
+    right: auto;
+    bottom: auto;
+    margin-right: -50%;
+    padding: 40px;
+    max-width: 928px;
+    max-height: 530px;
+    border-radius: 20px;
+}
+
+.modal.overlay {
+    background-color: rgba(46, 47, 66, 0.4);
+}
