@@ -53,8 +53,16 @@ export const CampersItem = ({ value }) => {
     </MapPinSVG>
   );
 
-  const { adultsSVG, transmissionSVG, petrolSVG, kitchenSVG, bedsSVG, acSVG } =
-    useSvgIcons();
+  const {
+    adultsSVG,
+    transmissionSVG,
+    petrolSVG,
+    kitchenSVG,
+    bedsSVG,
+    acSVG,
+    heartSVG,
+    redHeartSVG,
+  } = useSvgIcons();
 
   return (
     <>
@@ -63,7 +71,7 @@ export const CampersItem = ({ value }) => {
         <div>
           <TitleWrapper>
             <Title>{name}</Title>
-            <Price>€{price}.00</Price>
+            <Price>€{price}.00 { heartSVG}</Price>
           </TitleWrapper>
           <CardInfo>
             <RatingWrapper>
@@ -109,7 +117,11 @@ export const CampersItem = ({ value }) => {
         </div>
       </Item>
 
-      <ModalShowMore isModalOpen={isOpenModal} setIsOpen={setIsOpenModal} data={value} />
+      <ModalShowMore
+        isModalOpen={isOpenModal}
+        setIsOpen={setIsOpenModal}
+        data={value}
+      />
     </>
   );
 };

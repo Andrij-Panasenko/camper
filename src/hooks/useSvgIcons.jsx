@@ -38,6 +38,18 @@ export const useSvgIcons = () => {
     </Svg>
   );
 
+  const heartSVG = (
+    <Svg>
+      <use xlinkHref={sprite + "#icon-heart"}></use>
+    </Svg>
+  );
+
+  const redHeartSVG = (
+    <Svg>
+      <use xlinkHref={sprite + "#icon-red-heart"}></use>
+    </Svg>
+  );
+
   return {
     adultsSVG,
     transmissionSVG,
@@ -45,5 +57,7 @@ export const useSvgIcons = () => {
     kitchenSVG,
     bedsSVG,
     acSVG,
+    heartSVG,
+    redHeartSVG,
   };
 }
