@@ -13,6 +13,7 @@ import {
   Title,
 } from "./ModalShowMore.styled";
 import { BookingCamperForm } from "../BookingCamperForm/BookingCamperForm";
+import { Features } from "../Features/Features";
 // import { useSvgIcons } from "../../hooks/useSvgIcons";
 Modal.setAppElement("#modal");
 
@@ -66,7 +67,7 @@ export const ModalShowMore = ({ isModalOpen, setIsOpen, data }) => {
           <Price>€{price}.00</Price>
           <GalleryList>
             {gallery.map((item) => (
-              <GalleryItem>
+              <GalleryItem key={item}>
                 <GalleryImg src={item} alt={name} />
               </GalleryItem>
             ))}
@@ -77,7 +78,10 @@ export const ModalShowMore = ({ isModalOpen, setIsOpen, data }) => {
           <button>Features</button>
           <button>Reviews</button>
         </div>
-        <BookingCamperForm/>
+        <div>
+          <Features data={data} />
+          <BookingCamperForm />
+        </div>
       </Modal>
     </>
   );

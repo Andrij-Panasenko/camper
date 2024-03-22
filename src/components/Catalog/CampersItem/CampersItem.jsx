@@ -39,7 +39,7 @@ export const CampersItem = ({ value }) => {
   } = value;
 
   const [isOpenModal, setIsOpenModal] = useState(false);
-  console.log(value);
+  // console.log(value);
 
   const ratingSVG = (
     <RateSvg>
