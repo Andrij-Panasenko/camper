@@ -85,18 +85,17 @@ export const ReviewsBtn = styled.span`
   margin-bottom: 24px;
 `;
 
-export const ExpandBtn = styled.button`
-  font-weight: 600;
-  font-size: 20px;
-  line-height: 1.2;
-  color: ${(p) => p.theme.colors.black};
-  outline: none;
-  border: none;
-  background-color: transparent;
-  margin-bottom: 24px;
+export const RadioWrapper = styled.div`
+  position: relative;
 `;
 
-/* position: absolute;
+export const BtnWrapper = styled.div`
+  display: flex;
+  gap: 40px;
+`;
+
+export const Radio = styled.input`
+  position: absolute;
   white-space: nowrap;
   width: 1px;
   height: 1px;
@@ -105,15 +104,38 @@ export const ExpandBtn = styled.button`
   padding: 0;
   clip: rect(0 0 0 0);
   clip-path: inset(50%);
-  margin: -1px; */
+  margin: -1px;
 
-export const Radio = styled.input``;
+  &:checked + label > ${FeaturesBtn} {
+    &::before {
+      content: "";
+      display: flex;
+      background-color: ${(p) => p.theme.colors.red};
+      width: 85px;
+      height: 5px;
+      position: absolute;
+      bottom: -24px;
+    }
+  }
+
+  &:checked + label > ${ReviewsBtn} {
+    &::before {
+      content: "";
+      display: flex;
+      background-color: ${(p) => p.theme.colors.red};
+      width: 85px;
+      height: 5px;
+      position: absolute;
+      bottom: -24px;
+    }
+  }
+`;
 
 export const IconLine = styled.svg`
-width: 902px;
-height: 2px;
-margin-top: 24px;
-margin-bottom: 44px;
+  width: 902px;
+  height: 2px;
+  margin-top: 24px;
+  margin-bottom: 44px;
 `;
 
 export const FeaturesWrapper = styled.div`

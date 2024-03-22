@@ -2,9 +2,9 @@ import Modal from "react-modal";
 import sprite from "../../assets/sprite.svg";
 import styles from "./ModalShowMore.module.css";
 import {
+  BtnWrapper,
   CardInfo,
   Description,
-  ExpandBtn,
   FeaturesBtn,
   FeaturesWrapper,
   GalleryImg,
@@ -14,6 +14,7 @@ import {
   Location,
   Price,
   Radio,
+  RadioWrapper,
   Reviews,
   ReviewsBtn,
   Title,
@@ -50,8 +51,8 @@ export const ModalShowMore = ({ isModalOpen, setIsOpen, data }) => {
     <>
       <Modal
         // className={styles.modal}
-        // isOpen={isModalOpen}
-        isOpen={true}
+        isOpen={isModalOpen}
+        // isOpen={true}
         onRequestClose={() => {
           setIsOpen(false);
         }}
@@ -82,19 +83,21 @@ export const ModalShowMore = ({ isModalOpen, setIsOpen, data }) => {
           <Description>{description}</Description>
         </div>
 
-        <div>
-          <Radio id="features" name="expand" type="radio" />
-          <label for="features">
-            <FeaturesBtn>Features</FeaturesBtn>
-          </label>
-        </div>
-
-        <div>
-          <Radio id="reviews" name="expand" type="radio" />
-          <label for="reviews">
-            <ReviewsBtn>Reviews</ReviewsBtn>
-          </label>
-        </div>
+       <BtnWrapper>
+         <RadioWrapper>
+           <Radio id="features" name="expand" type="radio" />
+           <label for="features">
+             <FeaturesBtn>Features</FeaturesBtn>
+           </label>
+         </RadioWrapper>
+        
+         <RadioWrapper>
+           <Radio id="reviews" name="expand" type="radio" />
+           <label for="reviews">
+             <ReviewsBtn>Reviews</ReviewsBtn>
+           </label>
+         </RadioWrapper>
+       </BtnWrapper>
         <IconLine>
           <use xlinkHref={sprite + "#icon-line"}></use>
         </IconLine>
