@@ -22,8 +22,12 @@ import sprite from "../../../assets/sprite.svg";
 import { useSvgIcons } from "../../../hooks/useSvgIcons";
 import { useState } from "react";
 import { ModalShowMore } from "../../ModalShowMore.jsx/ModalShowMore";
+import { useDispatch } from "react-redux";
+import { addToFavorite } from "../../../redux/catalogSlice";
 
 export const CampersItem = ({ value }) => {
+  const dispatch = useDispatch();
+
   const {
     adults,
     description,
@@ -71,7 +75,12 @@ export const CampersItem = ({ value }) => {
         <div>
           <TitleWrapper>
             <Title>{name}</Title>
-            <Price>€{price}.00 { heartSVG}</Price>
+            <Price
+              onClick={() => {
+                dispatch(addToFavorite(value));
+              }}>
+              €{price}.00 {heartSVG}
+            </Price>
           </TitleWrapper>
           <CardInfo>
             <RatingWrapper>
