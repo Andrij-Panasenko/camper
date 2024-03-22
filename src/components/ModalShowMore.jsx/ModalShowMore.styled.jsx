@@ -60,3 +60,8 @@ export const GalleryImg = styled.img`
   /* width: 290px;
   height: 310px; */
 `;
+
+export const FeaturesWrapper = styled.div`
+display: flex;
+justify-content: space-between;
+`;

@@ -1,11 +1,12 @@
 import styled from "styled-components";
 
 export const FeaturesList = styled.ul`
-display: flex;
-flex-wrap: wrap;
-width: 430px;
-row-gap: 8px;
-column-gap: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  width: 430px;
+  row-gap: 8px;
+  column-gap: 8px;
+  margin-bottom: 44px;
 `;
 
 export const FeaturesItem = styled.li`
@@ -26,6 +27,8 @@ export const VehicleDetailsTitle = styled.h2`
 export const SvgLine = styled.svg`
   width: 430px;
   height: 2px;
+  margin-bottom: 24px;
+  margin-top: 24px;
 `;
 
 export const VehicleDetailsList = styled.ul`
@@ -36,6 +39,10 @@ export const VehicleDetailsList = styled.ul`
 export const VehicleDetailsItem = styled.li`
   display: flex;
   justify-content: space-between;
+
+  &:not(:last-child) {
+    margin-bottom: 14px;
+  }
 `;
 
 export const VehicleDetailsContent = styled.p`

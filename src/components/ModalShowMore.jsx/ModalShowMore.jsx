@@ -2,8 +2,9 @@ import Modal from "react-modal";
 
 import styles from "./ModalShowMore.module.css";
 import {
-    CardInfo,
+  CardInfo,
   Description,
+  FeaturesWrapper,
   GalleryImg,
   GalleryItem,
   GalleryList,
@@ -78,10 +79,10 @@ export const ModalShowMore = ({ isModalOpen, setIsOpen, data }) => {
           <button>Features</button>
           <button>Reviews</button>
         </div>
-        <div>
+        <FeaturesWrapper>
           <Features data={data} />
           <BookingCamperForm />
-        </div>
+        </FeaturesWrapper>
       </Modal>
     </>
   );
