@@ -29,9 +29,10 @@ export const CampersFilter = () => {
 
   const tvSvgIcon = (
     <FilterIcon>
-      <use xlinkHref={sprite + "#icon-AC"}></use>
+      <use xlinkHref={sprite + "#icon-TV"}></use>
     </FilterIcon>
   );
+
   const kitchenSvgIcon = (
     <FilterIcon>
       <use xlinkHref={sprite + "#icon-kitchen"}></use>
@@ -40,7 +41,7 @@ export const CampersFilter = () => {
 
   const acSvgIcon = (
     <FilterIcon>
-      <use xlinkHref={sprite + "#icon-tv"}></use>
+      <use xlinkHref={sprite + "#AC"}></use>
     </FilterIcon>
   );
 
