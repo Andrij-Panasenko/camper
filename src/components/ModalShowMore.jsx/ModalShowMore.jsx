@@ -27,6 +27,7 @@ import { useState } from "react";
 Modal.setAppElement("#modal");
 
 export const ModalShowMore = ({ isModalOpen, setIsOpen, data }) => {
+  
   const [openFeature, setOpenFeature] = useState(false);
   const [openReviews, setOpenReviews] = useState(false);
 
@@ -45,6 +46,7 @@ export const ModalShowMore = ({ isModalOpen, setIsOpen, data }) => {
   const customStyles = {
     overlay: {
       backgroundColor: "rgba(46, 47, 66, 0.4)",
+      scroll: "no-scroll",
     },
     content: {
       top: "50%",
@@ -68,9 +70,14 @@ export const ModalShowMore = ({ isModalOpen, setIsOpen, data }) => {
         // isOpen={true}
         onRequestClose={() => {
           setIsOpen(false);
+          setOpenFeature(false);
+          setOpenReviews(false);
         }}
         style={customStyles}
         contentLabel="More info modal">
+        
+
+
         <button
           onClick={() => {
             setIsOpen(false);

@@ -1,4 +1,4 @@
-.modal::-webkit-scrollbar {
+/* .modal::-webkit-scrollbar {
     width: 8px;
 }
 
@@ -29,4 +29,8 @@
 
 .modal.overlay {
     background-color: rgba(46, 47, 66, 0.4);
+} */
+
+.modal-overlay {
+    
 }
