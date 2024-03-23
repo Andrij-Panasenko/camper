@@ -7,14 +7,17 @@ const catalogSlice = createSlice({
     items: [],
     isLoading: false,
     error: null,
-    isFavorite: [],
+    favoriteList: [],
   },
   reducers: {
     addToFavorite(state, action) {
-      state.isFavorite = action.payload;
+      console.log('action', action)
+      state.favoriteList = [...state.favoriteList, action.payload];
+        //  const newItem = { ...action.payload, isFavorite: true };
+        //  state.favoriteList = [...state.favoriteList, newItem];
     },
     removeFromFavorite(state, action) {
-      state.isFavorite = state.isFavorite.filter((item) => item._id !== action.payload);
+      // state.isFavorite = state.isFavorite.filter((item) => item._id !== action.payload);
     },
   },
   extraReducers: (builder) => {
@@ -26,6 +29,11 @@ const catalogSlice = createSlice({
         state.isLoading = false;
         state.error = null;
         state.items = action.payload;
+        
+        // state.items = action.payload.map(item => ({
+        //   ...item,
+        //   isFavorite: false
+        // }));
       })
       .addCase(getAllCampers.rejected, (state, action) => {
         state.isLoading = false;

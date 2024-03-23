@@ -21,12 +21,15 @@ import sprite from "../../../assets/sprite.svg";
 
 import { useState } from "react";
 import { ModalShowMore } from "../../ModalShowMore.jsx/ModalShowMore";
-import { useDispatch } from "react-redux";
-import { addToFavorite } from "../../../redux/catalogSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { addToFavorite, removeFromFavorite } from "../../../redux/catalogSlice";
+import { selectCampers, selectFavoriteCampers } from "../../../redux/selectors";
 
 export const CampersItem = ({ value }) => {
   const dispatch = useDispatch();
-
+  const campers = useSelector(selectCampers)
+  const favorites = useSelector(selectFavoriteCampers);
+  
   const {
     adults,
     description,
@@ -42,7 +45,7 @@ export const CampersItem = ({ value }) => {
   } = value;
 
   const [isOpenModal, setIsOpenModal] = useState(false);
-  console.log(value);
+  // console.log(value);
 
   const ratingSVG = (
     <RateSvg>
@@ -85,6 +88,7 @@ export const CampersItem = ({ value }) => {
       <use xlinkHref={sprite + "#icon-bed"}></use>
     </Svg>
   );
+
   const acSvgIcon = (
     <Svg>
       <use xlinkHref={sprite + "#icon-tv"}></use>
@@ -92,10 +96,44 @@ export const CampersItem = ({ value }) => {
   );
 
   const heartSvgIcon = (
-    <Svg>
+    <Svg
+      onClick={() => {
+        dispatch(addToFavorite(value));
+      }}>
       <use xlinkHref={sprite + "#icon-heart"}></use>
     </Svg>
   );
+
+  const redHeartSvg = (
+    <Svg
+      onClick={() => {
+        dispatch(removeFromFavorite(value));
+      }}>
+      <use xlinkHref={sprite + "#icon-red-heart"}></use>
+    </Svg>
+  );
+
+
+  // console.log('favorites', favorites)
+  
+  // const handleFavoriteChange = () => {
+  const hasFavorite = campers.map(itemCamp => favorites.map(itemFav => itemCamp._id === itemFav._id))
+  
+
+  // hasFavorite.map(i => console.log('i', i))
+
+  // const hasFavorite = campers.map((item, idx) => (
+  //   h
+  // ))
+  console.log('hasFavorite', hasFavorite)
+
+  // }
+
+  // const favoriteCampers = () => {
+  //   const campers = favorites.map((item) =>  console.log(item._id) );
+  //   return campers
+  // }
+  // favoriteCampers();
   return (
     <>
       <Item>
@@ -103,10 +141,7 @@ export const CampersItem = ({ value }) => {
         <div>
           <TitleWrapper>
             <Title>{name}</Title>
-            <Price
-              onClick={() => {
-                dispatch(addToFavorite(value));
-              }}>
+            <Price>
               €{price}.00 {heartSvgIcon}
             </Price>
           </TitleWrapper>

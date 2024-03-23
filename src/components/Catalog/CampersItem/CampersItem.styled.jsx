@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const Svg = styled.svg`
+cursor: pointer;
   width: 20px;
   height: 20px;
   /* stroke: ${(p) => p.theme.colors.black}; */
