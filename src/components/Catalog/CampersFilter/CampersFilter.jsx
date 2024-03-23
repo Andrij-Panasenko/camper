@@ -1,59 +1,109 @@
-import { EquipButton, EquipmentList } from "./CampersFilter.styled";
+import {
+  ContentName,
+  Contetn,
+  EquipButton,
+  Title,
+  EquipmentList,
+  Filters,
+  Input,
+  InputWrapper,
+  Label,
+  LineSvg,
+  MapPin,
+} from "./CampersFilter.styled";
+import { useSvgIcons } from "../../../hooks/useSvgIcons.jsx";
+import sprite from "../../../assets/sprite.svg";
 
 export const CampersFilter = () => {
+  const {
+    adultsSVG,
+    transmissionSVG,
+    petrolSVG,
+    kitchenSVG,
+    bedsSVG,
+    acSVG,
+    tvSVG,
+    showerSVG,
+  } = useSvgIcons();
+
+  const mapPinSVG = (
+    <MapPin>
+      <use xlinkHref={sprite + "#icon-map-pin"}></use>
+    </MapPin>
+  );
+
+  const lineSVG = (
+    <LineSvg>
+      <use xlinkHref={sprite + "#icon-line"}></use>
+    </LineSvg>
+  );
+
   return (
     <>
       <div>
-        <label>
-          Location
-          <input type="text" />
-        </label>
-        <p>Filters</p>
+        <InputWrapper>
+          {mapPinSVG}
+          <Label>Location</Label>
+          <Input type="text" />
+        </InputWrapper>
+
+        <Filters>Filters</Filters>
+
         <div>
-          <p>Vehicle equipment</p>
+          <Title>Vehicle equipment</Title>
+          {lineSVG}
           <EquipmentList>
             <EquipButton>
-              <div>
-                <p>AC</p>
-              </div>
+              <Contetn>
+                {acSVG}
+                <ContentName>AC</ContentName>
+              </Contetn>
             </EquipButton>
             <EquipButton>
-              <div>
-                <p>Automatic</p>
-              </div>
+              <Contetn>
+                {transmissionSVG}
+                <ContentName>Automatic</ContentName>
+              </Contetn>
             </EquipButton>
             <EquipButton>
-              <div>
-                <p>Kitchen</p>
-              </div>
+              <Contetn>
+                {kitchenSVG}
+                <ContentName>Kitchen</ContentName>
+              </Contetn>
             </EquipButton>
             <EquipButton>
-              <div>
-                <p>TV</p>
-              </div>
+              <Contetn>
+                {tvSVG}
+                <ContentName>TV</ContentName>
+              </Contetn>
             </EquipButton>
             <EquipButton>
-              <div>
-                <p>Shower/WC</p>
-              </div>
+              <Contetn>
+                {showerSVG}
+                <ContentName>Shower/WC</ContentName>
+              </Contetn>
             </EquipButton>
           </EquipmentList>
         </div>
         <div>
-          <p>Vehicle type</p>
+          <Title>Vehicle type</Title>
+          {lineSVG}
           <ul>
             <li>
-              <button type="button"></button>{" "}
+              <p>свг</p>
+              <p></p>
             </li>
             <li>
-              <button type="button"></button>{" "}
+              <p>свг</p>
+              <p></p>
             </li>
             <li>
-              <button type="button"></button>{" "}
+              <p>свг</p>
+              <p></p>
             </li>
           </ul>
         </div>
-        <button type="submit"></button>
+        <button type="submit">Search</button>
       </div>
     </>
   );

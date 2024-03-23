@@ -1,5 +1,5 @@
-import sprite from '../assets/sprite.svg'
-import { Svg } from '../components/Catalog/CampersItem/CampersItem.styled';
+import sprite from "../assets/sprite.svg";
+import { Svg } from "../components/Catalog/CampersItem/CampersItem.styled";
 
 export const useSvgIcons = () => {
   const adultsSVG = (
@@ -34,7 +34,19 @@ export const useSvgIcons = () => {
 
   const acSVG = (
     <Svg>
+      <use xlinkHref={sprite + "#icon-tv"}></use>
+    </Svg>
+  );
+
+  const tvSVG = (
+    <Svg>
       <use xlinkHref={sprite + "#icon-AC"}></use>
+    </Svg>
+  );
+
+  const showerSVG = (
+    <Svg>
+      <use xlinkHref={sprite + "#icon-shower"}></use>
     </Svg>
   );
 
@@ -50,6 +62,8 @@ export const useSvgIcons = () => {
     </Svg>
   );
 
+  
+
   return {
     adultsSVG,
     transmissionSVG,
@@ -59,5 +73,7 @@ export const useSvgIcons = () => {
     acSVG,
     heartSVG,
     redHeartSVG,
+    tvSVG,
+    showerSVG,
   };
-}
+};
