@@ -4,6 +4,8 @@ import "./ModalShowMore.css";
 import {
   BtnWrapper,
   CardInfo,
+  CloseModal,
+  CrossIcon,
   Description,
   ExpandedContetnWrapp,
   FeaturesBtn,
@@ -27,7 +29,6 @@ import { useState } from "react";
 Modal.setAppElement("#modal");
 
 export const ModalShowMore = ({ isModalOpen, setIsOpen, data }) => {
-
   const [openFeature, setOpenFeature] = useState(false);
   const [openReviews, setOpenReviews] = useState(false);
 
@@ -43,7 +44,6 @@ export const ModalShowMore = ({ isModalOpen, setIsOpen, data }) => {
 
   const { name, price, rating, reviews, description, gallery, location } = data;
 
-
   return (
     <>
       <Modal
@@ -56,12 +56,14 @@ export const ModalShowMore = ({ isModalOpen, setIsOpen, data }) => {
           setOpenReviews(false);
         }}
         contentLabel="More info modal">
-        <button
+        <CloseModal
           onClick={() => {
             setIsOpen(false);
           }}>
-          close
-        </button>
+          <CrossIcon>
+            <use xlinkHref={sprite + "#icon-cross"}></use>
+          </CrossIcon>
+        </CloseModal>
         <div>
           <Title>{name}</Title>
           <CardInfo>

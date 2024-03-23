@@ -1,5 +1,24 @@
 import styled from "styled-components";
 
+export const CloseModal = styled.button`
+position: absolute;
+right: 40px;
+top: 40px;
+background-color: transparent;
+border: transparent;
+outline: none;
+padding: 0;
+display: flex;
+align-items: center;
+justify-content: center;
+border-radius: 50%;
+`;
+
+export const CrossIcon = styled.svg`
+width: 32px;
+height: 32px;
+`;
+
 export const Title = styled.h2`
   font-weight: 600;
   font-size: 24px;
