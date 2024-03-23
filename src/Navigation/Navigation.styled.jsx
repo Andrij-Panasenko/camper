@@ -5,9 +5,24 @@ import { NavLink as NavigationLink } from "react-router-dom";
 export const Nav = styled.nav`
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 20px;
 `;
 
+export const Logo = styled(NavigationLink)`
+  font-size: 25px;
+  font-weight: 500;
+  text-decoration: none;
+
+  color: ${(p) => p.theme.colors.black};
+`;
+
+
+export const NavWrapp = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 20px;
+`;
 
 export const NavLink = styled(NavigationLink)`
   display: block;

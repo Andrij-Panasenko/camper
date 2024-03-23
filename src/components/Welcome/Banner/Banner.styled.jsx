@@ -35,5 +35,11 @@ export const NavLink = styled(Navigate)`
   padding: 20px 64px;
   text-decoration: none;
   color: #fff7ed;
-  background-color: ${p=>p.theme.colors.red};
+  background-color: ${(p) => p.theme.colors.red};
+  transition: background-color ${(p) => p.theme.transition};
+
+  &:hover,
+  :focus {
+    background-color: ${(p) => p.theme.colors.hoverRed};
+  }
 `;
