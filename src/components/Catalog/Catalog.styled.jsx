@@ -4,5 +4,6 @@ export const CatalogWrapp = styled.section`
 max-width: 1440px;
 margin: 0 auto;
   display: flex;
-  justify-content: space-between;
+  gap: 64px;
+  justify-content: center;
 `;

@@ -74,7 +74,7 @@ export const EquipmentList = styled.ul`
 export const EquipButton = styled.li`
   border-radius: 10px;
   /* padding: 17px 18px; */
-  width: 112px;
+  width: 111px;
   height: 95px;
   border: 1px solid rgba(16, 24, 40, 0.2);
   cursor: pointer;
