@@ -1,17 +1,34 @@
 import { PiWind } from "react-icons/pi";
-import { Button, CardInfo, Description, Image, InfoList, InfoListItem, Item, Location, LocationWrapper, MapPinSVG, Price, RateSvg, RatingWrapper, Reviews, Svg, Title, TitleWrapper } from "./FavoritesItem.styled";
+import {
+  Button,
+  CardInfo,
+  Description,
+  Image,
+  InfoList,
+  InfoListItem,
+  Item,
+  Location,
+  LocationWrapper,
+  MapPinSVG,
+  Price,
+  RateSvg,
+  RatingWrapper,
+  Reviews,
+  Svg,
+  Title,
+  TitleWrapper,
+} from "./FavoritesItem.styled";
 import { useState } from "react";
 import { ModalShowMore } from "../../ModalShowMore.jsx/ModalShowMore";
-import sprite from '../../../assets/sprite.svg'
+import sprite from "../../../assets/sprite.svg";
 import { useDispatch } from "react-redux";
-import { addToFavorite, removeFromFavorite } from '../../../redux/catalogSlice'
+import { removeFromFavorite } from "../../../redux/catalogSlice";
 
 export const FavoritesItem = ({ data }) => {
+  const dispatch = useDispatch();
 
-    const dispatch = useDispatch();
-
-      const [isOpenModal, setIsOpenModal] = useState(false);
-      const [isCardFavorite, setIsCardFavorite] = useState(false);
+  const [isOpenModal, setIsOpenModal] = useState(false);
+  const [isCardFavorite, setIsCardFavorite] = useState(false);
   const {
     adults,
     description,
@@ -77,16 +94,6 @@ export const FavoritesItem = ({ data }) => {
       }}
     />
   );
-
-  // const heartSvgIcon = (
-  //   <Svg
-  //     onClick={() => {
-  //       dispatch(addToFavorite(data));
-  //       setIsCardFavorite(!isCardFavorite);
-  //     }}>
-  //     <use xlinkHref={sprite + "#icon-heart"}></use>
-  //   </Svg>
-  // );
 
   const redHeartSvg = (
     <Svg

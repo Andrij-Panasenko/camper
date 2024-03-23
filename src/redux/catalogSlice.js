@@ -12,7 +12,6 @@ const catalogSlice = createSlice({
   reducers: {
     addToFavorite(state, action) {
       console.log("action", action);
-      // state.favoriteList = [...state.favoriteList, action.payload];
       const newItem = { ...action.payload, isFavorite: true };
       state.favoriteList = [...state.favoriteList, newItem];
     },
@@ -32,11 +31,6 @@ const catalogSlice = createSlice({
         state.isLoading = false;
         state.error = null;
         state.items = action.payload;
-
-        // state.items = action.payload.map(item => ({
-        //   ...item,
-        //   isFavorite: false
-        // }));
       })
       .addCase(getAllCampers.rejected, (state, action) => {
         state.isLoading = false;

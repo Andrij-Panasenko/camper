@@ -4,8 +4,6 @@ export const Svg = styled.svg`
   cursor: pointer;
   width: 20px;
   height: 20px;
-  /* stroke: ${(p) => p.theme.colors.black}; */
-  /* fill: ${(p) => p.theme.colors.black}; */
 `;
 
 export const RateSvg = styled.svg`
