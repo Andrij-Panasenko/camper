@@ -82,7 +82,7 @@ export const CampersFilter = () => {
 
   return (
     <>
-      <div>
+      <sidebar>
         <InputWrapper>
           {mapPinSVG}
           <Label>Location</Label>
@@ -147,7 +147,7 @@ export const CampersFilter = () => {
           </VehicleList>
         </div>
         <SubmitBtn type="submit">Search</SubmitBtn>
-      </div>
+      </sidebar>
     </>
   );
 };
