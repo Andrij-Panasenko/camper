@@ -27,9 +27,21 @@ import { selectCampers, selectFavoriteCampers } from "../../../redux/selectors";
 
 export const CampersItem = ({ value }) => {
   const dispatch = useDispatch();
-  const campers = useSelector(selectCampers)
+  const campers = useSelector(selectCampers);
   const favorites = useSelector(selectFavoriteCampers);
-  
+
+  const isFavoriteValue = favorites.map((item) => item.isFavorite);
+  console.log(isFavoriteValue);
+
+  const [isOpenModal, setIsOpenModal] = useState(false);
+  const [isCardFavorite, setIsCardFavorite] = useState(
+    isFavoriteValue ?? false
+  );
+
+  // const handleToggleFavorite = () => {
+  //   setIsCardFavorite(!isCardFavorite);
+  // }
+
   const {
     adults,
     description,
@@ -44,8 +56,6 @@ export const CampersItem = ({ value }) => {
     reviews,
   } = value;
 
-  const [isOpenModal, setIsOpenModal] = useState(false);
-  // console.log(value);
 
   const ratingSVG = (
     <RateSvg>
@@ -99,6 +109,7 @@ export const CampersItem = ({ value }) => {
     <Svg
       onClick={() => {
         dispatch(addToFavorite(value));
+        setIsCardFavorite(!isCardFavorite);
       }}>
       <use xlinkHref={sprite + "#icon-heart"}></use>
     </Svg>
@@ -108,32 +119,12 @@ export const CampersItem = ({ value }) => {
     <Svg
       onClick={() => {
         dispatch(removeFromFavorite(value));
+        setIsCardFavorite(!isCardFavorite);
       }}>
       <use xlinkHref={sprite + "#icon-red-heart"}></use>
     </Svg>
   );
 
-
-  // console.log('favorites', favorites)
-  
-  // const handleFavoriteChange = () => {
-  const hasFavorite = campers.map(itemCamp => favorites.map(itemFav => itemCamp._id === itemFav._id))
-  
-
-  // hasFavorite.map(i => console.log('i', i))
-
-  // const hasFavorite = campers.map((item, idx) => (
-  //   h
-  // ))
-  console.log('hasFavorite', hasFavorite)
-
-  // }
-
-  // const favoriteCampers = () => {
-  //   const campers = favorites.map((item) =>  console.log(item._id) );
-  //   return campers
-  // }
-  // favoriteCampers();
   return (
     <>
       <Item>
@@ -142,7 +133,7 @@ export const CampersItem = ({ value }) => {
           <TitleWrapper>
             <Title>{name}</Title>
             <Price>
-              €{price}.00 {heartSvgIcon}
+              €{price}.00 {isCardFavorite ? heartSvgIcon : redHeartSvg}
             </Price>
           </TitleWrapper>
           <CardInfo>
