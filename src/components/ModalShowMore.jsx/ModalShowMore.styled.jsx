@@ -141,7 +141,7 @@ export const IconLine = styled.span`
 
 `;
 
-export const FeaturesWrapper = styled.div`
+export const ExpandedContetnWrapp = styled.div`
   display: flex;
   justify-content: space-between;
 `;

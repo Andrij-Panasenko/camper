@@ -5,8 +5,8 @@ import {
   BtnWrapper,
   CardInfo,
   Description,
+  ExpandedContetnWrapp,
   FeaturesBtn,
-  FeaturesWrapper,
   GalleryImg,
   GalleryItem,
   GalleryList,
@@ -22,11 +22,23 @@ import {
 import { BookingCamperForm } from "../BookingCamperForm/BookingCamperForm";
 import { Features } from "../Features/Features";
 import { Reviews as ReviewsBlock } from "../Reviews/Reviews";
+import { useState } from "react";
 
 Modal.setAppElement("#modal");
 
 export const ModalShowMore = ({ isModalOpen, setIsOpen, data }) => {
- 
+  const [openFeature, setOpenFeature] = useState(false);
+  const [openReviews, setOpenReviews] = useState(false);
+
+  const openFeaturesMenu = () => {
+    setOpenFeature(true);
+    setOpenReviews(false);
+  };
+
+  const openReviewsMenu = () => {
+    setOpenReviews(true);
+    setOpenFeature(false);
+  };
 
   const { name, price, rating, reviews, description, gallery, location } = data;
 
@@ -88,26 +100,33 @@ export const ModalShowMore = ({ isModalOpen, setIsOpen, data }) => {
           <RadioWrapper>
             <Radio id="features" name="expand" type="radio" />
             <label htmlFor="features">
-              <FeaturesBtn>Features</FeaturesBtn>
+              <FeaturesBtn onClick={openFeaturesMenu}>Features</FeaturesBtn>
             </label>
           </RadioWrapper>
 
           <RadioWrapper>
             <Radio id="reviews" name="expand" type="radio" />
             <label htmlFor="reviews">
-              <ReviewsBtn>Reviews</ReviewsBtn>
+              <ReviewsBtn onClick={openReviewsMenu}>Reviews</ReviewsBtn>
             </label>
           </RadioWrapper>
         </BtnWrapper>
         <IconLine></IconLine>
-        {/* <FeaturesWrapper>
-          <Features data={data} />
-          <BookingCamperForm />
-        </FeaturesWrapper> */}
-        <div>
-          <ReviewsBlock data={data} />
-          {/* <BookingCamperForm /> */}
-        </div>
+
+        <ExpandedContetnWrapp>
+          {openFeature && (
+            <>
+              <Features data={data} />
+              <BookingCamperForm />
+            </>
+          )}
+          {openReviews && (
+            <>
+              <ReviewsBlock data={data} />
+              <BookingCamperForm />
+            </>
+          )}
+        </ExpandedContetnWrapp>
       </Modal>
     </>
   );
