@@ -15,3 +15,16 @@ export const getAllCampers = createAsyncThunk(
     }
   }
 );
+
+// export const updateFavorite = createAsyncThunk(
+//   "put/campers",
+//   async (data, thunkAPI) => {
+//     try {
+//       const response = await axios.put(`/adverts/${data}`, data)
+//       return response.data
+//     } catch (error) {
+//       console.log(error.message);
+//       return thunkAPI.rejectWithValue(error.message)
+//     }
+//   }
+// )

@@ -28,12 +28,12 @@ const catalogSlice = createSlice({
       .addCase(getAllCampers.fulfilled, (state, action) => {
         state.isLoading = false;
         state.error = null;
-        // state.items = action.payload;
+        state.items = action.payload;
         
-        state.items = action.payload.map(item => ({
-          ...item,
-          isFavorite: false
-        }));
+        // state.items = action.payload.map(item => ({
+        //   ...item,
+        //   isFavorite: false
+        // }));
       })
       .addCase(getAllCampers.rejected, (state, action) => {
         state.isLoading = false;

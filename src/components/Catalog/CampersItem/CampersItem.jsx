@@ -24,23 +24,17 @@ import { ModalShowMore } from "../../ModalShowMore.jsx/ModalShowMore";
 import { useDispatch, useSelector } from "react-redux";
 import { addToFavorite, removeFromFavorite } from "../../../redux/catalogSlice";
 import { selectCampers, selectFavoriteCampers } from "../../../redux/selectors";
-
+import { PiWind } from "react-icons/pi";
 export const CampersItem = ({ value }) => {
   const dispatch = useDispatch();
   const campers = useSelector(selectCampers);
   const favorites = useSelector(selectFavoriteCampers);
 
-  const isFavoriteValue = favorites.map((item) => item.isFavorite);
-  console.log(isFavoriteValue);
+  // const isFavoriteValue = favorites.map((item) => item.isFavorite);
+  // console.log(isFavoriteValue);
 
   const [isOpenModal, setIsOpenModal] = useState(false);
-  const [isCardFavorite, setIsCardFavorite] = useState(
-    isFavoriteValue ?? false
-  );
-
-  // const handleToggleFavorite = () => {
-  //   setIsCardFavorite(!isCardFavorite);
-  // }
+  const [isCardFavorite, setIsCardFavorite] = useState(false);
 
   const {
     adults,
@@ -99,11 +93,15 @@ export const CampersItem = ({ value }) => {
     </Svg>
   );
 
-  const acSvgIcon = (
-    <Svg>
-      <use xlinkHref={sprite + "#icon-tv"}></use>
-    </Svg>
-  );
+   const acSvgIcon = (
+     <PiWind
+       style={{
+         color: "#000000",
+         width: "20px",
+         height: "20px",
+       }}
+     />
+   );
 
   const heartSvgIcon = (
     <Svg
@@ -133,7 +131,7 @@ export const CampersItem = ({ value }) => {
           <TitleWrapper>
             <Title>{name}</Title>
             <Price>
-              €{price}.00 {isCardFavorite ? heartSvgIcon : redHeartSvg}
+              €{price}.00 {isCardFavorite ? redHeartSvg : heartSvgIcon }
             </Price>
           </TitleWrapper>
           <CardInfo>
