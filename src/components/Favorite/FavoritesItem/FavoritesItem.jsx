@@ -78,15 +78,15 @@ export const FavoritesItem = ({ data }) => {
     />
   );
 
-  const heartSvgIcon = (
-    <Svg
-      onClick={() => {
-        dispatch(addToFavorite(data));
-        setIsCardFavorite(!isCardFavorite);
-      }}>
-      <use xlinkHref={sprite + "#icon-heart"}></use>
-    </Svg>
-  );
+  // const heartSvgIcon = (
+  //   <Svg
+  //     onClick={() => {
+  //       dispatch(addToFavorite(data));
+  //       setIsCardFavorite(!isCardFavorite);
+  //     }}>
+  //     <use xlinkHref={sprite + "#icon-heart"}></use>
+  //   </Svg>
+  // );
 
   const redHeartSvg = (
     <Svg
@@ -106,7 +106,7 @@ export const FavoritesItem = ({ data }) => {
           <TitleWrapper>
             <Title>{name}</Title>
             <Price>
-              €{price}.00 {isCardFavorite ? redHeartSvg : heartSvgIcon}
+              €{price}.00 {redHeartSvg}
             </Price>
           </TitleWrapper>
           <CardInfo>

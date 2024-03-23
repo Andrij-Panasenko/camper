@@ -11,13 +11,16 @@ const catalogSlice = createSlice({
   },
   reducers: {
     addToFavorite(state, action) {
-      console.log('action', action)
+      console.log("action", action);
       // state.favoriteList = [...state.favoriteList, action.payload];
-         const newItem = { ...action.payload, isFavorite: true };
-         state.favoriteList = [...state.favoriteList, newItem];
+      const newItem = { ...action.payload, isFavorite: true };
+      state.favoriteList = [...state.favoriteList, newItem];
     },
     removeFromFavorite(state, action) {
-      // state.isFavorite = state.isFavorite.filter((item) => item._id !== action.payload);
+      console.log("action", action);
+      state.favoriteList = state.favoriteList.filter(
+        (item) => item._id !== action.payload._id
+      );
     },
   },
   extraReducers: (builder) => {
@@ -29,7 +32,7 @@ const catalogSlice = createSlice({
         state.isLoading = false;
         state.error = null;
         state.items = action.payload;
-        
+
         // state.items = action.payload.map(item => ({
         //   ...item,
         //   isFavorite: false
