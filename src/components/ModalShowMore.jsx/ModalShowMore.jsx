@@ -1,6 +1,6 @@
 import Modal from "react-modal";
 import sprite from "../../assets/sprite.svg";
-import styles from "./ModalShowMore.module.css";
+import "./ModalShowMore.css";
 import {
   BtnWrapper,
   CardInfo,
@@ -27,7 +27,7 @@ import { useState } from "react";
 Modal.setAppElement("#modal");
 
 export const ModalShowMore = ({ isModalOpen, setIsOpen, data }) => {
-  
+
   const [openFeature, setOpenFeature] = useState(false);
   const [openReviews, setOpenReviews] = useState(false);
 
@@ -43,41 +43,19 @@ export const ModalShowMore = ({ isModalOpen, setIsOpen, data }) => {
 
   const { name, price, rating, reviews, description, gallery, location } = data;
 
-  const customStyles = {
-    overlay: {
-      backgroundColor: "rgba(46, 47, 66, 0.4)",
-      scroll: "no-scroll",
-    },
-    content: {
-      top: "50%",
-      left: "50%",
-      right: "auto",
-      bottom: "auto",
-      marginRight: "-50%",
-      transform: "translate(-50%, -50%)",
-      padding: "40px",
-      maxWidth: "982px",
-      maxHeight: "530px",
-      borderRadius: "20px",
-    },
-  };
 
   return (
     <>
       <Modal
-        // className={styles.modal}
+        overlayClassName="Modal-overlay"
+        className="Modal-content"
         isOpen={isModalOpen}
-        // isOpen={true}
         onRequestClose={() => {
           setIsOpen(false);
           setOpenFeature(false);
           setOpenReviews(false);
         }}
-        style={customStyles}
         contentLabel="More info modal">
-        
-
-
         <button
           onClick={() => {
             setIsOpen(false);
