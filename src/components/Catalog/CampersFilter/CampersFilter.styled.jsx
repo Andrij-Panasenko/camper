@@ -98,9 +98,9 @@ export const Contetn = styled.div`
   text-align: center;
 `;
 
-export const FilterIcon = styled.div`
-  /* width: 32px; */
-  /* height: 32px; */
+export const FilterIcon = styled.svg`
+  width: 32px;
+  height: 32px;
 `;
 
 export const VehicleList = styled.ul`

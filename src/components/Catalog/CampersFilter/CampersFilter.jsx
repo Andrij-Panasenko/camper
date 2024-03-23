@@ -28,32 +28,32 @@ export const CampersFilter = () => {
   );
 
   const tvSvgIcon = (
-    <svg>
+    <FilterIcon>
       <use xlinkHref={sprite + "#icon-AC"}></use>
-    </svg>
+    </FilterIcon>
   );
   const kitchenSvgIcon = (
-    <svg>
+    <FilterIcon>
       <use xlinkHref={sprite + "#icon-kitchen"}></use>
-    </svg>
+    </FilterIcon>
   );
 
   const acSvgIcon = (
-    <svg>
+    <FilterIcon>
       <use xlinkHref={sprite + "#icon-tv"}></use>
-    </svg>
+    </FilterIcon>
   );
 
   const transmissionSvgIcon = (
-    <svg>
+    <FilterIcon>
       <use xlinkHref={sprite + "#icon-trans"}></use>
-    </svg>
+    </FilterIcon>
   );
 
   const showerSvgIcon = (
-    <svg>
+    <FilterIcon>
       <use xlinkHref={sprite + "#icon-shower"}></use>
-    </svg>
+    </FilterIcon>
   );
 
   const lineSVG = (
