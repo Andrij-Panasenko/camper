@@ -21,11 +21,11 @@ import {
 } from "./ModalShowMore.styled";
 import { BookingCamperForm } from "../BookingCamperForm/BookingCamperForm";
 import { Features } from "../Features/Features";
-// import { useSvgIcons } from "../../hooks/useSvgIcons";
+
 Modal.setAppElement("#modal");
 
 export const ModalShowMore = ({ isModalOpen, setIsOpen, data }) => {
-  // const { ratingSVG } = useSvgIcons();
+ 
 
   const { name, price, rating, reviews, description, gallery, location } = data;
 

@@ -10,32 +10,74 @@ import {
   Label,
   LineSvg,
   MapPin,
+  VehicleList,
+  VehicleType,
+  VehicleName,
+  VehicleTypeSvg,
+  SubmitBtn,
+  FilterIcon,
 } from "./CampersFilter.styled";
-import { useSvgIcons } from "../../../hooks/useSvgIcons.jsx";
+
 import sprite from "../../../assets/sprite.svg";
 
 export const CampersFilter = () => {
-  const {
-    adultsSVG,
-    transmissionSVG,
-    petrolSVG,
-    kitchenSVG,
-    bedsSVG,
-    acSVG,
-    tvSVG,
-    showerSVG,
-  } = useSvgIcons();
-
   const mapPinSVG = (
     <MapPin>
       <use xlinkHref={sprite + "#icon-map-pin"}></use>
     </MapPin>
   );
 
+  const tvSvgIcon = (
+    <svg>
+      <use xlinkHref={sprite + "#icon-AC"}></use>
+    </svg>
+  );
+  const kitchenSvgIcon = (
+    <svg>
+      <use xlinkHref={sprite + "#icon-kitchen"}></use>
+    </svg>
+  );
+
+  const acSvgIcon = (
+    <svg>
+      <use xlinkHref={sprite + "#icon-tv"}></use>
+    </svg>
+  );
+
+  const transmissionSvgIcon = (
+    <svg>
+      <use xlinkHref={sprite + "#icon-trans"}></use>
+    </svg>
+  );
+
+  const showerSvgIcon = (
+    <svg>
+      <use xlinkHref={sprite + "#icon-shower"}></use>
+    </svg>
+  );
+
   const lineSVG = (
     <LineSvg>
       <use xlinkHref={sprite + "#icon-line"}></use>
     </LineSvg>
+  );
+
+  const vanSVG = (
+    <VehicleTypeSvg>
+      <use xlinkHref={sprite + "#icon-van"}></use>
+    </VehicleTypeSvg>
+  );
+
+  const integratedSVG = (
+    <VehicleTypeSvg>
+      <use xlinkHref={sprite + "#icon-integrated"}></use>
+    </VehicleTypeSvg>
+  );
+
+  const acloveSVG = (
+    <VehicleTypeSvg>
+      <use xlinkHref={sprite + "#icon-aclove"}></use>
+    </VehicleTypeSvg>
   );
 
   return (
@@ -55,31 +97,32 @@ export const CampersFilter = () => {
           <EquipmentList>
             <EquipButton>
               <Contetn>
-                {acSVG}
+                {acSvgIcon}
                 <ContentName>AC</ContentName>
               </Contetn>
             </EquipButton>
             <EquipButton>
               <Contetn>
-                {transmissionSVG}
+                {transmissionSvgIcon}
                 <ContentName>Automatic</ContentName>
               </Contetn>
             </EquipButton>
             <EquipButton>
               <Contetn>
-                {kitchenSVG}
+                {kitchenSvgIcon}
                 <ContentName>Kitchen</ContentName>
               </Contetn>
             </EquipButton>
             <EquipButton>
               <Contetn>
-                {tvSVG}
+                {tvSvgIcon}
                 <ContentName>TV</ContentName>
               </Contetn>
             </EquipButton>
             <EquipButton>
               <Contetn>
-                {showerSVG}
+                {showerSvgIcon}
+
                 <ContentName>Shower/WC</ContentName>
               </Contetn>
             </EquipButton>
@@ -88,22 +131,22 @@ export const CampersFilter = () => {
         <div>
           <Title>Vehicle type</Title>
           {lineSVG}
-          <ul>
-            <li>
-              <p>свг</p>
-              <p></p>
-            </li>
-            <li>
-              <p>свг</p>
-              <p></p>
-            </li>
-            <li>
-              <p>свг</p>
-              <p></p>
-            </li>
-          </ul>
+          <VehicleList>
+            <VehicleType>
+              {vanSVG}
+              <VehicleName>Van</VehicleName>
+            </VehicleType>
+            <VehicleType>
+              {integratedSVG}
+              <VehicleName>Fully Integrated</VehicleName>
+            </VehicleType>
+            <VehicleType>
+              {acloveSVG}
+              <VehicleName>Alcove</VehicleName>
+            </VehicleType>
+          </VehicleList>
         </div>
-        <button type="submit">Search</button>
+        <SubmitBtn type="submit">Search</SubmitBtn>
       </div>
     </>
   );

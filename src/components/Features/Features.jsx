@@ -9,14 +9,10 @@ import {
 } from "./Features.styled";
 
 import sprite from "../../assets/sprite.svg";
-import { useSvgIcons } from "../../hooks/useSvgIcons";
 
 export const Features = ({ data }) => {
   const { form, length, width, height, consumption, tank, details } = data;
 
-    const { adultsSVG, transmissionSVG, petrolSVG, kitchenSVG, bedsSVG, } =
-      useSvgIcons();
-    
   const filteredDetails = Object.entries(details).filter(
     ([key, value]) => value !== 0 || value !== ""
   );

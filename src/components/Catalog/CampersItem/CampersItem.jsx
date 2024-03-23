@@ -19,7 +19,6 @@ import {
 } from "./CampersItem.styled";
 import sprite from "../../../assets/sprite.svg";
 
-import { useSvgIcons } from "../../../hooks/useSvgIcons";
 import { useState } from "react";
 import { ModalShowMore } from "../../ModalShowMore.jsx/ModalShowMore";
 import { useDispatch } from "react-redux";
@@ -57,17 +56,46 @@ export const CampersItem = ({ value }) => {
     </MapPinSVG>
   );
 
-  const {
-    adultsSVG,
-    transmissionSVG,
-    petrolSVG,
-    kitchenSVG,
-    bedsSVG,
-    acSVG,
-    heartSVG,
-    redHeartSVG,
-  } = useSvgIcons();
 
+  const adultsSvgIcon = (
+    <Svg>
+      <use xlinkHref={sprite + "#icon-adults"}></use>
+    </Svg>
+  );
+  const kitchenSvgIcon = (
+    <Svg>
+      <use xlinkHref={sprite + "#icon-kitchen"}></use>
+    </Svg>
+  );
+
+  const transmissionSvgIcon = (
+    <Svg>
+      <use xlinkHref={sprite + "#icon-trans"}></use>
+    </Svg>
+  );
+
+  const petrolSvgIcon = (
+    <Svg>
+      <use xlinkHref={sprite + "#icon-petrol"}></use>
+    </Svg>
+  );
+
+  const bedsSvgIcon = (
+    <Svg>
+      <use xlinkHref={sprite + "#icon-bed"}></use>
+    </Svg>
+  );
+  const acSvgIcon = (
+    <Svg>
+      <use xlinkHref={sprite + "#icon-tv"}></use>
+    </Svg>
+  );
+
+  const heartSvgIcon = (
+    <Svg>
+      <use xlinkHref={sprite + "#icon-heart"}></use>
+    </Svg>
+  );
   return (
     <>
       <Item>
@@ -79,7 +107,7 @@ export const CampersItem = ({ value }) => {
               onClick={() => {
                 dispatch(addToFavorite(value));
               }}>
-              €{price}.00 {heartSVG}
+              €{price}.00 {heartSvgIcon}
             </Price>
           </TitleWrapper>
           <CardInfo>
@@ -98,23 +126,23 @@ export const CampersItem = ({ value }) => {
           <Description>{description}</Description>
           <InfoList>
             <InfoListItem>
-              {adultsSVG}
+              {adultsSvgIcon}
               {adults}&nbsp;adults
             </InfoListItem>
             <InfoListItem>
-              {transmissionSVG}
+              {transmissionSvgIcon}
               {transmission}
             </InfoListItem>
             <InfoListItem>
-              {petrolSVG}
+              {petrolSvgIcon}
               {engine}
             </InfoListItem>
-            <InfoListItem>{kitchenSVG}Kitchen</InfoListItem>
+            <InfoListItem>{kitchenSvgIcon}Kitchen</InfoListItem>
             <InfoListItem>
-              {bedsSVG}
+              {bedsSvgIcon}
               {details.beds}&nbsp;beds
             </InfoListItem>
-            <InfoListItem>{acSVG}AC</InfoListItem>
+            <InfoListItem>{acSvgIcon}AC</InfoListItem>
           </InfoList>
           <Button
             type="button"
