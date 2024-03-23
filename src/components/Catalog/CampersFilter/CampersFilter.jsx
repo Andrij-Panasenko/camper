@@ -1,3 +1,4 @@
+import { PiWind } from "react-icons/pi";
 import {
   ContentName,
   Contetn,
@@ -40,9 +41,13 @@ export const CampersFilter = () => {
   );
 
   const acSvgIcon = (
-    <FilterIcon>
-      <use xlinkHref={sprite + "#AC"}></use>
-    </FilterIcon>
+    <PiWind
+      style={{
+        color: "#000000",
+        width: "32px",
+        height: "32px",
+      }}
+    />
   );
 
   const transmissionSvgIcon = (
