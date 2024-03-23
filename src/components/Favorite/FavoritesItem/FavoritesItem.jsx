@@ -1,42 +1,17 @@
-import {
-  Item,
-  Image,
-  Description,
-  Button,
-  Title,
-  Price,
-  Reviews,
-  Location,
-  TitleWrapper,
-  InfoList,
-  InfoListItem,
-  Svg,
-  RateSvg,
-  CardInfo,
-  RatingWrapper,
-  LocationWrapper,
-  MapPinSVG,
-} from "./CampersItem.styled";
-import sprite from "../../../assets/sprite.svg";
-
+import { PiWind } from "react-icons/pi";
+import { Button, CardInfo, Description, Image, InfoList, InfoListItem, Item, Location, LocationWrapper, MapPinSVG, Price, RateSvg, RatingWrapper, Reviews, Svg, Title, TitleWrapper } from "./FavoritesItem.styled";
 import { useState } from "react";
 import { ModalShowMore } from "../../ModalShowMore.jsx/ModalShowMore";
-import { useDispatch, useSelector } from "react-redux";
-import { addToFavorite, removeFromFavorite } from "../../../redux/catalogSlice";
-import { selectCampers, selectFavoriteCampers } from "../../../redux/selectors";
-import { PiWind } from "react-icons/pi";
+import sprite from '../../../assets/sprite.svg'
+import { useDispatch } from "react-redux";
+import { addToFavorite, removeFromFavorite } from '../../../redux/catalogSlice'
 
-export const CampersItem = ({ value }) => {
-  const dispatch = useDispatch();
-  const campers = useSelector(selectCampers);
-  const favorites = useSelector(selectFavoriteCampers);
+export const FavoritesItem = ({ data }) => {
 
-  // const isFavoriteValue = favorites.map((item) => item.isFavorite);
-  // console.log(isFavoriteValue);
+    const dispatch = useDispatch();
 
-  const [isOpenModal, setIsOpenModal] = useState(false);
-  const [isCardFavorite, setIsCardFavorite] = useState(false);
-
+      const [isOpenModal, setIsOpenModal] = useState(false);
+      const [isCardFavorite, setIsCardFavorite] = useState(false);
   const {
     adults,
     description,
@@ -49,8 +24,7 @@ export const CampersItem = ({ value }) => {
     details,
     gallery,
     reviews,
-  } = value;
-
+  } = data;
 
   const ratingSVG = (
     <RateSvg>
@@ -94,20 +68,20 @@ export const CampersItem = ({ value }) => {
     </Svg>
   );
 
-   const acSvgIcon = (
-     <PiWind
-       style={{
-         color: "#000000",
-         width: "20px",
-         height: "20px",
-       }}
-     />
-   );
+  const acSvgIcon = (
+    <PiWind
+      style={{
+        color: "#000000",
+        width: "20px",
+        height: "20px",
+      }}
+    />
+  );
 
   const heartSvgIcon = (
     <Svg
       onClick={() => {
-        dispatch(addToFavorite(value));
+        dispatch(addToFavorite(data));
         setIsCardFavorite(!isCardFavorite);
       }}>
       <use xlinkHref={sprite + "#icon-heart"}></use>
@@ -117,7 +91,7 @@ export const CampersItem = ({ value }) => {
   const redHeartSvg = (
     <Svg
       onClick={() => {
-        dispatch(removeFromFavorite(value));
+        dispatch(removeFromFavorite(data));
         setIsCardFavorite(!isCardFavorite);
       }}>
       <use xlinkHref={sprite + "#icon-red-heart"}></use>
@@ -132,7 +106,7 @@ export const CampersItem = ({ value }) => {
           <TitleWrapper>
             <Title>{name}</Title>
             <Price>
-              €{price}.00 {isCardFavorite ? redHeartSvg : heartSvgIcon }
+              €{price}.00 {isCardFavorite ? redHeartSvg : heartSvgIcon}
             </Price>
           </TitleWrapper>
           <CardInfo>
@@ -182,7 +156,7 @@ export const CampersItem = ({ value }) => {
       <ModalShowMore
         isModalOpen={isOpenModal}
         setIsOpen={setIsOpenModal}
-        data={value}
+        data={data}
       />
     </>
   );

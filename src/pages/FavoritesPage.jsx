@@ -1,5 +1,6 @@
-export default function FavoritesPage() {
+import { Favorite } from "../components/Favorite/Favorite";
 
+export default function FavoritesPage() {
     // const favoriteCampers = () => {
     //   const campers = favorites.map((item) => console.log(item._id));
     //   return campers;
@@ -7,7 +8,7 @@ export default function FavoritesPage() {
     // favoriteCampers();
   return (
     <div>
-      <h1>Favorites Page</h1>
+      <Favorite/>
     </div>
   );
 }
