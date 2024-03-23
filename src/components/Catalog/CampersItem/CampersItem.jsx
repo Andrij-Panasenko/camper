@@ -42,7 +42,7 @@ export const CampersItem = ({ value }) => {
   } = value;
 
   const [isOpenModal, setIsOpenModal] = useState(false);
-  // console.log(value);
+  console.log(value);
 
   const ratingSVG = (
     <RateSvg>
@@ -56,12 +56,12 @@ export const CampersItem = ({ value }) => {
     </MapPinSVG>
   );
 
-
   const adultsSvgIcon = (
     <Svg>
       <use xlinkHref={sprite + "#icon-adults"}></use>
     </Svg>
   );
+
   const kitchenSvgIcon = (
     <Svg>
       <use xlinkHref={sprite + "#icon-kitchen"}></use>

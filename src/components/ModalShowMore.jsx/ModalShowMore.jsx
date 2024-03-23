@@ -21,6 +21,7 @@ import {
 } from "./ModalShowMore.styled";
 import { BookingCamperForm } from "../BookingCamperForm/BookingCamperForm";
 import { Features } from "../Features/Features";
+import { Reviews as ReviewsBlock } from "../Reviews/Reviews";
 
 Modal.setAppElement("#modal");
 
@@ -83,28 +84,30 @@ export const ModalShowMore = ({ isModalOpen, setIsOpen, data }) => {
           <Description>{description}</Description>
         </div>
 
-       <BtnWrapper>
-         <RadioWrapper>
-           <Radio id="features" name="expand" type="radio" />
-           <label for="features">
-             <FeaturesBtn>Features</FeaturesBtn>
-           </label>
-         </RadioWrapper>
-        
-         <RadioWrapper>
-           <Radio id="reviews" name="expand" type="radio" />
-           <label for="reviews">
-             <ReviewsBtn>Reviews</ReviewsBtn>
-           </label>
-         </RadioWrapper>
-       </BtnWrapper>
-        <IconLine>
-          {/* <use xlinkHref={sprite + "#icon-line"}></use> */}
-        </IconLine>
-        <FeaturesWrapper>
+        <BtnWrapper>
+          <RadioWrapper>
+            <Radio id="features" name="expand" type="radio" />
+            <label htmlFor="features">
+              <FeaturesBtn>Features</FeaturesBtn>
+            </label>
+          </RadioWrapper>
+
+          <RadioWrapper>
+            <Radio id="reviews" name="expand" type="radio" />
+            <label htmlFor="reviews">
+              <ReviewsBtn>Reviews</ReviewsBtn>
+            </label>
+          </RadioWrapper>
+        </BtnWrapper>
+        <IconLine></IconLine>
+        {/* <FeaturesWrapper>
           <Features data={data} />
           <BookingCamperForm />
-        </FeaturesWrapper>
+        </FeaturesWrapper> */}
+        <div>
+          <ReviewsBlock data={data} />
+          {/* <BookingCamperForm /> */}
+        </div>
       </Modal>
     </>
   );
