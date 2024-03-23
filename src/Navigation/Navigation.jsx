@@ -4,9 +4,11 @@ export const Navigation = () => {
     return (
       <>
         <Nav>
-          <NavLink to="/">Main page</NavLink>
-          <NavLink to="/catalog">Catalog</NavLink>
-          <NavLink to="/favorites">Favorites</NavLink>
+          <NavLink to="/">NomadVans</NavLink>
+         <div>
+           <NavLink to="/catalog">Catalog</NavLink>
+           <NavLink to="/favorites">Favorites</NavLink>
+         </div>
         </Nav>
       </>
     );

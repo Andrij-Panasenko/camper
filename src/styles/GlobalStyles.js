@@ -3,7 +3,8 @@ import { createGlobalStyle } from "styled-components";
 export const GlobalStyles = createGlobalStyle`
 
 body {
-    font-family: "Inter", sans-serif;;
+    font-family: "Inter", sans-serif;
+    margin: 0;
 }
 
 button {
