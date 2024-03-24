@@ -42,6 +42,10 @@ export const Image = styled.img`
 `;
 
 export const Title = styled.h2`
+  max-width: 360px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
   font-weight: 600;
   font-size: 24px;
   line-height: 1.25;
