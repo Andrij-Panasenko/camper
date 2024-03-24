@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Svg = styled.svg`
-cursor: pointer;
+  cursor: pointer;
   width: 20px;
   height: 20px;
 `;
@@ -30,9 +30,9 @@ export const Item = styled.li`
   box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
     0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
 
-    &:not(:last-child) {
-      margin-bottom: 32px;
-    }
+  &:not(:last-child) {
+    margin-bottom: 32px;
+  }
 `;
 
 export const Image = styled.img`
