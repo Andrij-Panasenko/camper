@@ -19,11 +19,6 @@ export const FavoriteList = () => {
           ))}
         </ul>
       )}
-      {/* <ul>
-        {favorites.map((item) => (
-          <FavoritesItem key={item._id} data={item} />
-        ))}
-      </ul> */}
     </>
   );
 };

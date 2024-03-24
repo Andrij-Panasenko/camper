@@ -31,9 +31,6 @@ export const CampersItem = ({ value }) => {
   const campers = useSelector(selectCampers);
   const favorites = useSelector(selectFavoriteCampers);
 
-  // const isFavoriteValue = favorites.map((item) => item.isFavorite);
-  // console.log(isFavoriteValue);
-
   const [isOpenModal, setIsOpenModal] = useState(false);
   const [isCardFavorite, setIsCardFavorite] = useState(false);
 
