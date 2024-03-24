@@ -21,15 +21,12 @@ import sprite from "../../../assets/sprite.svg";
 
 import { useState } from "react";
 import { ModalShowMore } from "../../ModalShowMore.jsx/ModalShowMore";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { addToFavorite, removeFromFavorite } from "../../../redux/catalogSlice";
-import { selectCampers, selectFavoriteCampers } from "../../../redux/selectors";
 import { PiWind } from "react-icons/pi";
 
 export const CampersItem = ({ value }) => {
   const dispatch = useDispatch();
-  const campers = useSelector(selectCampers);
-  const favorites = useSelector(selectFavoriteCampers);
 
   const [isOpenModal, setIsOpenModal] = useState(false);
   const [isCardFavorite, setIsCardFavorite] = useState(false);

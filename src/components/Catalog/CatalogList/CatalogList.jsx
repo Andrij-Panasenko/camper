@@ -2,7 +2,7 @@ import { useSelector } from "react-redux";
 import { selectCampers } from "../../../redux/selectors";
 import { CampersItem } from "../CampersItem/CampersItem";
 import { useState } from "react";
-import { LoadMore, Wrapper } from "./CatalogList.styled";
+import { LoadMore } from "./CatalogList.styled";
 
 export const CatalogList = () => {
   const campersItem = useSelector(selectCampers);

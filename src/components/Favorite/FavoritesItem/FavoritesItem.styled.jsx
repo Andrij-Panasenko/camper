@@ -118,9 +118,7 @@ export const InfoListItem = styled.li`
   font-size: 16px;
   line-height: 1.25;
   border-radius: 100px;
-  /* text-align: center; */
   display: flex;
-  /* align-items: center; */
   justify-content: center;
   gap: 8px;
 

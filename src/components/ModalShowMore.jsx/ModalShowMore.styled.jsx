@@ -1,22 +1,22 @@
 import styled from "styled-components";
 
 export const CloseModal = styled.button`
-position: absolute;
-right: 40px;
-top: 40px;
-background-color: transparent;
-border: transparent;
-outline: none;
-padding: 0;
-display: flex;
-align-items: center;
-justify-content: center;
-border-radius: 50%;
+  position: absolute;
+  right: 40px;
+  top: 40px;
+  background-color: transparent;
+  border: transparent;
+  outline: none;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
 `;
 
 export const CrossIcon = styled.svg`
-width: 32px;
-height: 32px;
+  width: 32px;
+  height: 32px;
 `;
 
 export const Title = styled.h2`
@@ -68,7 +68,6 @@ export const GalleryList = styled.ul`
 `;
 
 export const GalleryItem = styled.li`
-  /* border-radius: 10px; */
   width: 290px;
   height: 310px;
 `;
@@ -76,8 +75,6 @@ export const GalleryItem = styled.li`
 export const GalleryImg = styled.img`
   border-radius: 10px;
   height: 100%;
-  /* width: 290px;
-  height: 310px; */
 `;
 
 export const FeaturesBtn = styled.span`
@@ -157,7 +154,6 @@ export const IconLine = styled.span`
   background-color: rgba(16, 24, 40, 0.2);
   margin-bottom: 44px;
   margin-top: 24px;
-
 `;
 
 export const ExpandedContetnWrapp = styled.div`

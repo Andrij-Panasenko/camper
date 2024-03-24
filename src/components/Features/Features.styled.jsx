@@ -20,7 +20,6 @@ export const VehicleDetailsTitle = styled.h2`
   font-weight: 600;
   font-size: 20px;
   line-height: 1.2;
-  /* margin-bottom: 24px; */
 
   color: ${(p) => p.theme.colors.black};
 `;

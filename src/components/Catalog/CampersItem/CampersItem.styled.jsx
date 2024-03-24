@@ -4,8 +4,6 @@ export const Svg = styled.svg`
 cursor: pointer;
   width: 20px;
   height: 20px;
-  /* stroke: ${(p) => p.theme.colors.black}; */
-  /* fill: ${(p) => p.theme.colors.black}; */
 `;
 
 export const RateSvg = styled.svg`
@@ -26,7 +24,6 @@ export const Item = styled.li`
   width: 840px;
   height: 310px;
 
-  /* outline: 1px solid red; */
   border: 1px solid rgba(16, 24, 40, 0.2);
   border-radius: 20px;
 
@@ -120,9 +117,7 @@ export const InfoListItem = styled.li`
   font-size: 16px;
   line-height: 1.25;
   border-radius: 100px;
-  /* text-align: center; */
   display: flex;
-  /* align-items: center; */
   justify-content: center;
   gap: 8px;
 
